@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
+	"github.com/glebtv/static_gzipped"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 	// set prefix
 	//r.Use(static.Serve("/static", static.LocalFile("/tmp", true)))
 
-	r.Use(static.Serve("/", static.LocalFile("/tmp", false)))
+	r.Use(static.Serve("/", static_gzipped.LocalFile("/tmp", false)))
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(200, "test")
 	})

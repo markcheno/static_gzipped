@@ -5,7 +5,6 @@ import (
 	"strings"
 
 	assetfs "github.com/elazarl/go-bindata-assetfs"
-	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -42,7 +41,7 @@ func BinaryFileSystem(root string) *binaryFileSystem {
 func main() {
 	r := gin.Default()
 
-	r.Use(static.Serve("/static", BinaryFileSystem("data")))
+	r.Use(static_gzipped.Serve("/static", BinaryFileSystem("data")))
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(200, "test")
 	})

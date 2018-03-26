@@ -1,4 +1,4 @@
-package static
+package static_gzipped
 
 import (
 	"net/http"
