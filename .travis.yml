@@ -10,10 +10,7 @@ go:
   - tip
 
 install:
-  - echo "ignore go get"
-  - go get -u github.com/kardianos/govendor
-  - go get github.com/campoy/embedmd
-  - govendor sync
+  - go get -u all
 
 script:
   - embedmd -d *.md
