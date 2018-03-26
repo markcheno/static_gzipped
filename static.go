@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
+	"github.com/lpar/gzipped"
 )
 
 type ServeFileSystem interface {
@@ -49,7 +50,7 @@ func ServeRoot(urlPrefix, root string) gin.HandlerFunc {
 
 // Static returns a middleware handler that serves static files in the given directory.
 func Serve(urlPrefix string, fs ServeFileSystem) gin.HandlerFunc {
-	fileserver := http.FileServer(fs)
+	fileserver := gzipped.FileServer(fs)
 	if urlPrefix != "" {
 		fileserver = http.StripPrefix(urlPrefix, fileserver)
 	}
