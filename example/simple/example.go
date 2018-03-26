@@ -13,7 +13,7 @@ func main() {
 	// set prefix
 	//r.Use(static.Serve("/static", static.LocalFile("/tmp", true)))
 
-	r.Use(static.Serve("/", static_gzipped.LocalFile("/tmp", false)))
+	r.Use(static_gzipped.Serve("/", static_gzipped.LocalFile("/tmp", false)))
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(200, "test")
 	})

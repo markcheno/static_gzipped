@@ -6,6 +6,7 @@ import (
 
 	assetfs "github.com/elazarl/go-bindata-assetfs"
 	"github.com/gin-gonic/gin"
+	"github.com/glebtv/static_gzipped"
 )
 
 type binaryFileSystem struct {
