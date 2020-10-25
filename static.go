@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/lpar/gzipped"
+	"github.com/lpar/gzipped/v2"
 )
 
 type ServeFileSystem interface {
